@@ -9,13 +9,14 @@
 <body>
   <h1>Skills</h1>
   <ul>
-    <% skills.forEach(skill => { %>
+    <% skills.forEach(function(skill) { %>
       <li>
-				<%= skill.text %> 
-				- 
-				<%= skill.done ? 'gained' : 'not yet gained' %>
-			</li>
+        <a href="/skills/<%= skill._id %>"><%= skill.text %></a>
+          - 
+        <%= skill.done ? 'gained' : 'not yet gained' %>
+      </li>
     <% }) %>
   </ul>
+  <a href="/skills/new">Add A Skill</a>
 </body>
 </html>
